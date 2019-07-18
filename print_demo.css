@@ -1,0 +1,8 @@
+@media print{
+	#t1_content{
+    	display: block !important;
+    }
+    #t2_content{
+    	display: none !important;
+    }
+}

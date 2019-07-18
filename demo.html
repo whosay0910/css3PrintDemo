@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo Print</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="print_demo.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn_save').click(function(){
+				var tt = $('#tt').val();
+				$('#print').hide();
+				$('#t1_content').hide();
+				$('#t2_content').hide();
+
+				if(tt=="")
+					alert('請輸入111 或 222');
+				else if(tt!='111' && tt!='222')
+				{
+					alert('請輸入111 或 222');
+				}
+				else
+				{
+					if(tt=='111')
+					{
+						$('#t1_content').show();
+						$('#t2_content').hide();
+						$('#print').show();
+					}
+
+					if(tt=='222')
+					{
+						$('#t2_content').show();
+						$('#t1_content').hide();
+						$('#print').show();
+					}
+
+				}
+				$('#tt').val("");
+			})
+
+			$('#print_css').click(function(){
+
+			})
+
+			$('#print').click(function(){
+				window.print();
+			})
+
+		})
+	</script>
+	<style type="text/css">
+		#t1_content, #t2_content, #print{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h2>介紹前端語言 CSS3 / print列印應用</h2>
+	<div>
+		<div>查詢：</div><input type="text" id="tt">
+		<button id="btn_save">送出</button>
+		<div id="t1_content">編碼為：111</div>
+		<div id="t2_content">編碼為：222</div>
+		<button id="print">預覽列印</button>
+	</div>
+	<div>
+		<!-- <button id="print_css">查看CSS原始碼</button> -->
+	</div>
+</body>
+</html>
